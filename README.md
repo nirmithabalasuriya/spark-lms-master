@@ -1,9 +1,5 @@
 # spark-lms
-Library Management System developed in Spring Boot.
-
-
-#### What does it offer?
-It allows user to manage Members, Categories, Books and Issueing Books.
+Loan Appliocation System developed in Spring Boot..
 
 
 ### Setup project
