@@ -25,7 +25,6 @@ public class ApplicationStartup implements ApplicationListener<ApplicationReadyE
 
         if( userService.getAllUsers().size() == 0) {
             userService.addNew(new User("Mr. Admin", "admin", "admin", Constants.ROLE_ADMIN));
-            userService.addNew(new User("Mr. Librarian", "librarian", "librarian", Constants.ROLE_LIBRARIAN));
         }
 
     }

@@ -47,15 +47,15 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="b : ${books}">
+									<tr th:each="b : ${loans}">
 										<td th:text="${b.category.name}"></td>
 										<td th:text="${b.tag}"></td>
 										<td th:text="${b.title}"></td>
 										<td th:text="${b.authors}"></td>
 										<td>
-											<a th:href="@{'/book/edit/' + ${b.id}}"><i class="fa fa-edit"></i></a>
-											<a data-toggle="modal" data-target=".remove-book-modal" onclick="removeBookDialog(this);"
-												th:data-book-id="${b.id}" th:data-book-name="${b.title}" style="cursor: pointer;">
+											<a th:href="@{'/loan/edit/' + ${b.id}}"><i class="fa fa-edit"></i></a>
+											<a data-toggle="modal" data-target=".remove-book-modal" onclick="removeLoanDialog(this);"
+												th:data-loan-id="${b.id}" th:data-loqan-name="${b.title}" style="cursor: pointer;">
 												<i class="fa fa-remove"></i>
 											</a>
 										</td>
@@ -68,7 +68,7 @@
 			</div>
 			<!-- /page content -->
 
-			<div class="modal fade remove-book-modal" tabindex="-1"
+			<div class="modal fade remove-loan-modal" tabindex="-1"
 				role="dialog" aria-hidden="true">
 				<div class="modal-dialog modal-sm">
 					<div class="modal-content">
@@ -81,12 +81,12 @@
 							<h4 class="modal-title">Remove Book</h4>
 						</div>
 						<div class="modal-body">
-							<p>Are you sure you want to remove <br/><strong><span id="book-name"></span></strong>?</p>
+							<p>Are you sure you want to remove <br/><strong><span id="loan-name"></span></strong>?</p>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
 								data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary" onclick="removeBook();">Yes!</button>
+							<button type="button" class="btn btn-primary" onclick="removeloan();">Yes!</button>
 						</div>
 
 					</div>
@@ -100,6 +100,6 @@
 
 	<th:block th:replace="fragments/scripts :: common"></th:block>
 	<th:block th:replace="fragments/scripts :: datatable"></th:block>
-	<script th:src="@{/custom/js/book/list.js}"></script>
+	<script th:src="@{/custom/js/loan/list.js}"></script>
 </body>
 </html>

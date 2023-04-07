@@ -44,14 +44,14 @@
 										<td th:text="${i.member.firstName + ' ' + i.member.middleName + ' ' + i.member.lastName}"></td>
 										<td>
 											<ul th:id="${'issue_' + i.id}">
-												<th:block th:each="ib : ${i.issuedBooks}">
-													<li th:if="${ib.returned==0}" th:text="${ib.book.title}"  th:data-id="${ib.id}"></li>
+												<th:block th:each="ib : ${i.issuedLoans}">
+													<li th:if="${ib.returned==0}" th:text="${ib.loan.title}"  th:data-id="${ib.id}"></li>
 												</th:block>
 											</ul>
 										</td>
 										<td th:text="${#dates.format(i.issueDate, 'dd-MMM-yyyy')}"></td>
 										<td>
-											<a href="javascript:void(0);" title="Return book(s)" th:onclick="'returnBook(' + ${i.id} + ')'"><i class="fa fa-undo"></i></a>
+											<a href="javascript:void(0);" title="Return loan(s)" th:onclick="'returnloan(' + ${i.id} + ')'"><i class="fa fa-undo"></i></a>
 										</td>
 									</tr>
 								</tbody>
@@ -62,7 +62,7 @@
 			</div>
 			<!-- /page content -->
 
-			<div class="modal fade return-book-modal" tabindex="-1"
+			<div class="modal fade return-loan-modal" tabindex="-1"
 				role="dialog" aria-hidden="true">
 				<div class="modal-dialog modal-md">
 					<div class="modal-content">
@@ -85,7 +85,7 @@
 						<div class="modal-footer">
 							<button type="button" class="btn btn-default"
 								data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary" onclick="returnBookConfirm();">Return Selected</button>
+							<button type="button" class="btn btn-primary" onclick="returnLoanConfirm();">Return Selected</button>
 						</div>
 
 					</div>

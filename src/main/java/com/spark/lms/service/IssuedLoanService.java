@@ -24,8 +24,8 @@ public class IssuedLoanService {
 		return issuedLoanRepository.findAll();
 	}
 
-	public boolean get(Long id) {
-		return issuedLoanRepository.findById(id).isPresent();
+	public IssuedLoan get(Long id) {
+		return issuedLoanRepository.findById(id).get();
 	}
 
 	public Long getCountByLoan(Loan loan) {

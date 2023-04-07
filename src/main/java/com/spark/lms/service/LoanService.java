@@ -20,9 +20,7 @@ public class LoanService {
 	@Autowired
 	private IssuedLoanService issuedLoanService;
 
-	public Long getTotalCount() {
-		return loanRepository.count();
-	}
+	public static Long getTotalCount() {return loanRepository.count();}
 
 	public Long getTotalIssuedLoans() {
 		return loanRepository.countByStatus(Constants.LOAN_STATUS_ISSUED);

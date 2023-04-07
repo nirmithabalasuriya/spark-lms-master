@@ -42,8 +42,8 @@ public class IssuedLoan implements Serializable {
 	@NotNull
 	private Issue issue;
 
-	@Column(name = "returned_status")
-	private Integer returnedStatus;
+	@Column(name = "returned")
+	private Integer returned;
 
 	public Long getId() {
 		return id;
@@ -70,11 +70,11 @@ public class IssuedLoan implements Serializable {
 	}
 
 	public Integer getReturnedStatus() {
-		return returnedStatus;
+		return returned;
 	}
 
 	public void setReturnedStatus(Integer returnedStatus) {
-		this.returnedStatus = returnedStatus;
+		this.returned = returnedStatus;
 	}
 
     public void setReturned(Integer loanNotReturned) {

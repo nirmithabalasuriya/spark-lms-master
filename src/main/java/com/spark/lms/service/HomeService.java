@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spark.lms.common.Constants;
 @Service
 public class HomeService {
 
@@ -24,8 +25,8 @@ public class HomeService {
 		map.put("totalStudents", memberService.getStudentsCount());
 		map.put("totalParents", memberService.getParentsCount());
 		map.put("totalCategories", categoryService.getTotalCount());
-		map.put("totalLoans", loanService.getTotalCount());
-		map.put("totalIssuedLoans", IssuedLoanService.getTotalCount());
+		map.put("totalLoans", LoanService.getTotalCount());
+		map.put("totalIssuedLoans", loanService.getTotalIssuedLoans());
 		return map;
 	}
 
