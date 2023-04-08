@@ -1,5 +1,5 @@
 # spark-lms
-Library Management System developed in Spring Boot.
+Loan Application System developed in Spring Boot.
 
 
 #### What does it offer?
